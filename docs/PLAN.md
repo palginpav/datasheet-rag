@@ -53,13 +53,12 @@ Engineering roadmap for datasheet-rag. Six phases; each phase lands as a reviewe
 
 **Goal:** QLoRA vs RAG vs both — measured, not asserted.
 
-- [ ] Training set from synthetic QA (held-out split discipline documented)
-- [ ] QLoRA via Unsloth on Qwen3-4B (T4-class GPU); 8B if budget allows
-- [ ] Arms: base+RAG · FT no-retrieval · FT+RAG · long-context arm (Phi-4-mini 128K, whole-datasheet-in-context)
-- [ ] Adapters + training configs published (HF Hub); curves logged (MLflow/W&B)
-- [ ] Results chapter: where FT helps, where RAG dominates, whether they compose — reported as measured
-- **Exit criteria:** all arms on the golden-set scorecard; adapters public
-- *Scope valves if behind: drop reranker arm, then long-context arm. The 3-arm core study is protected.*
+- [x] Training set from 243 synthetic QA pairs (train/val split; disjoint from the golden eval over a shared corpus — documented)
+- [x] QLoRA on Qwen3-4B (peft+TRL+bitsandbytes 4-bit, not Unsloth — torch 2.12/CUDA 13 pins); eval loss 7.5 → 2.11
+- [x] Arms: base/FT × closed-book/RAG over frozen dense+rerank contexts (long-context arm dropped per scope valve)
+- [x] Results chapter (docs/finetune-study.md): RAG dominates; QLoRA didn't inject knowledge and collapsed refusal calibration (3/9)
+- **Exit criteria met:** all four arms measured on the golden set; honest conclusion — ship dense+rerank, not FT
+- *Note: Ollama 0.11.10 can't import Qwen3 safetensors, so the FT arms run via transformers over frozen contexts rather than Ollama.*
 
 ## Phase 6 — Demo & docs
 

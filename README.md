@@ -93,6 +93,13 @@ right document every time, and the residual weakness was within-document chunk r
 cross-encoder reranker fixed exactly that. End-to-end with the judge, correctness rises
 4.28 → 4.39 and refusal calibration stays 9/9.
 
+**Fine-tuning study** ([full writeup](docs/finetune-study.md)): a QLoRA on Qwen3-4B was
+measured against RAG over identical frozen contexts. Retrieval dominates — closed-book
+correctness ~2/5 vs RAG ~4.6/5 — and fine-tuning on synthetic Q/A *hurt*: it didn't inject
+the exact spec values and it collapsed refusal calibration (3/9 vs 8/9) by training the model
+to always answer. **The project ships dense + rerank, the configuration the evidence supports** —
+not fine-tuning.
+
 ## Roadmap
 
 - [x] Repo scaffold, manifest schema, corpus downloader
@@ -100,7 +107,7 @@ cross-encoder reranker fixed exactly that. End-to-end with the judge, correctnes
 - [x] Baseline dense RAG with citations + refusal path
 - [x] 100-question golden set + eval harness (local judge, synthetic generator, agreement tooling)
 - [x] Hybrid retrieval (BM25 + RRF) + reranker + ablation
-- [ ] QLoRA fine-tuning study (Qwen3, Unsloth) — RAG vs FT vs hybrid
+- [x] QLoRA fine-tuning study — measured RAG vs FT vs both; RAG wins, FT not shipped
 - [ ] Gradio demo (HF Spaces)
 
 ## License
