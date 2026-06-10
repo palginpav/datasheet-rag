@@ -1,5 +1,6 @@
 # Corpus: datasheet PDFs are downloadable but NOT redistributable — never committed
-corpus/
+# (root-anchored: must not swallow src/datasheet_rag/corpus/)
+/corpus/
 
 # Models, adapters, runs
 models/
