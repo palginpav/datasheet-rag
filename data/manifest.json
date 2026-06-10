@@ -81,6 +81,246 @@
       "sha256": "a523bb3c04adf0e97ae44cdc29ecc75bd557e95b28376399a5ffb11d0e89dc08",
       "category": "mcu",
       "pages": 149
+    },
+    {
+      "part": "TLV9061",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/tlv9061.pdf",
+      "sha256": "081a6fcbc3e8d46adb9a26455357891aae4bae71bf791cff97dba278bdaf7e31",
+      "category": "opamp",
+      "pages": 98
+    },
+    {
+      "part": "TLV9062",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/tlv9062.pdf",
+      "sha256": "081a6fcbc3e8d46adb9a26455357891aae4bae71bf791cff97dba278bdaf7e31",
+      "category": "opamp",
+      "pages": 98
+    },
+    {
+      "part": "TLV9064",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/tlv9064.pdf",
+      "sha256": "081a6fcbc3e8d46adb9a26455357891aae4bae71bf791cff97dba278bdaf7e31",
+      "category": "opamp",
+      "pages": 98
+    },
+    {
+      "part": "OPA2991",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/opa2991.pdf",
+      "sha256": "9088a300591e42a0bd5f06333bc6ab1a3602d4cc2f7e218ab91218a6c2dfe688",
+      "category": "opamp",
+      "pages": 88
+    },
+    {
+      "part": "OPA188",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/opa188.pdf",
+      "sha256": "44772d833141cc80cb95180202d2970038b7542e379b5cc852b4961c59233f20",
+      "category": "opamp",
+      "pages": 42
+    },
+    {
+      "part": "OPA2188",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/opa2188.pdf",
+      "sha256": "4c18dc2598c4bef739f07a882eedb03e0b1cfb0f49a5761c2ce6eac257599d36",
+      "category": "opamp",
+      "pages": 39
+    },
+    {
+      "part": "LM358",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/lm358.pdf",
+      "sha256": "e808f21a20579b68ba34387dab72a1ce1cbffc5428d1f4c2d89fb0ebef26bd3b",
+      "category": "opamp",
+      "pages": 68
+    },
+    {
+      "part": "TLV1117-33",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/tlv1117.pdf",
+      "sha256": "bf7613eed3f9f961ea69f5cc05260c042db7d47c2469eabd06d10042626fe0a7",
+      "category": "ldo",
+      "pages": 55
+    },
+    {
+      "part": "LD1117",
+      "manufacturer": "st",
+      "url": "https://www.st.com/resource/en/datasheet/ld1117.pdf",
+      "sha256": "4fd8415a20d932fdc1de5be99e1aa5d2af1546f05c0a785a047ff93420364348",
+      "category": "ldo",
+      "pages": 46
+    },
+    {
+      "part": "NCP1117",
+      "manufacturer": "onsemi",
+      "url": "https://www.onsemi.com/pdf/datasheet/ncp1117-d.pdf",
+      "sha256": "53a9ed65395cba10a4f7e88e05dfa81bd63ba8e9efc4897f41079dc09ae48613",
+      "category": "ldo",
+      "pages": 20
+    },
+    {
+      "part": "SN65HVD230",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/sn65hvd230.pdf",
+      "sha256": "e98fc0c59168c035d7958111924dae7e21e46ab45bdfd6400aef048299d6d716",
+      "category": "interface",
+      "pages": 43
+    },
+    {
+      "part": "TJA1051",
+      "manufacturer": "nxp",
+      "url": "https://www.nxp.com/docs/en/data-sheet/TJA1051.pdf",
+      "sha256": "6637cd500dda3c1c951ce29bed7fe909f11f9a3bef64b096dbb486827add9f11",
+      "category": "interface",
+      "pages": 25
+    },
+    {
+      "part": "SN75176B",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/sn75176b.pdf",
+      "sha256": "e0e000fcd9746f67e0cad13466176f826163b53f03852c1e7963c2b4f347288b",
+      "category": "interface",
+      "pages": 30
+    },
+    {
+      "part": "THVD1450",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/thvd1450.pdf",
+      "sha256": "c8d27b57c6cd2018d5a38d65fcc030f7cd47f2221232e26b05dc8671095693ca",
+      "category": "interface",
+      "pages": 54
+    },
+    {
+      "part": "MAX485",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX1487-MAX491.pdf",
+      "sha256": "b7888c0d45b0dc581a11cbc10cc53e2e2563271d5a01baed74dbae2845065d05",
+      "category": "interface",
+      "pages": 1
+    },
+    {
+      "part": "ADS1115",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/ads1115.pdf",
+      "sha256": "5fe00cf9509daba7ca311cd0a461debc563dd57598c5de3bf9c31903dc2238da",
+      "category": "adc",
+      "pages": 57
+    },
+    {
+      "part": "MCP3008",
+      "manufacturer": "microchip",
+      "url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MSLD/ProductDocuments/DataSheets/MCP3004-MCP3008-Data-Sheet-DS20001295.pdf",
+      "sha256": "26a503d76279cc10e40cfc36e80bb87fd33d0de80093d1bdcc4dc29435b10f72",
+      "category": "adc",
+      "pages": 42
+    },
+    {
+      "part": "MCP3421",
+      "manufacturer": "microchip",
+      "url": "https://ww1.microchip.com/downloads/aemDocuments/documents/OTH/ProductDocuments/DataSheets/22003e.pdf",
+      "sha256": "5249b67ed71256bcd6588a665a4e854955d3f2b17e7e57d8beb0ae7436d668ff",
+      "category": "adc",
+      "pages": 42
+    },
+    {
+      "part": "TMP117",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/tmp117.pdf",
+      "sha256": "f8da020789b98d7b8e1e5adca40287da45655296c64461037f8fc1dee1945d6b",
+      "category": "sensor",
+      "pages": 50
+    },
+    {
+      "part": "LM75B",
+      "manufacturer": "nxp",
+      "url": "https://www.nxp.com/docs/en/data-sheet/LM75B.pdf",
+      "sha256": "b0a93950c14a02d1849f7aa37d0a795be01bb44fb8f54af99925b06af39cdde3",
+      "category": "sensor",
+      "pages": 37
+    },
+    {
+      "part": "LM2596",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/lm2596.pdf",
+      "sha256": "c4cd25b7f4de7b1c98f117c47de28ae5e596a84fc54b1f6d24f9f5adde6fe8ae",
+      "category": "power",
+      "pages": 47
+    },
+    {
+      "part": "24LC256",
+      "manufacturer": "microchip",
+      "url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MPD/ProductDocuments/DataSheets/24AA256-24LC256-24FC256-256K-I2C-Serial-EEPROM-DS20001203.pdf",
+      "sha256": "37280f68ad38b83241cacfc3f470dcb9b2e787586beca22520f37d1c03a006db",
+      "category": "other",
+      "pages": 48
+    },
+    {
+      "part": "LPC1114",
+      "manufacturer": "nxp",
+      "url": "https://www.nxp.com/docs/en/data-sheet/LPC111X.pdf",
+      "sha256": "7def5af2a3708dae599cb896d53193860a97f5a6ea1312851db4e7478d47dc91",
+      "category": "mcu",
+      "pages": 127
+    },
+    {
+      "part": "LPC1768",
+      "manufacturer": "nxp",
+      "url": "https://www.nxp.com/docs/en/data-sheet/LPC1769_68_67_66_65_64_63.pdf",
+      "sha256": "dc8a0fffe9859bd5a4af4a2dd865bb11bc594a932f06722fba5baf579f16e54f",
+      "category": "mcu",
+      "pages": 93
+    },
+    {
+      "part": "INA226",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/ina226.pdf",
+      "sha256": "d3f22dfcf3a096b1f131302153a4c4ebdb39ba18f7a114b0554c8ae11c3abc3f",
+      "category": "sensor",
+      "pages": 40
+    },
+    {
+      "part": "LM4040",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/lm4040.pdf",
+      "sha256": "e7e6a64dc4ccb54db367a1412228abe4fdd34b43945740cb9967468843db2da0",
+      "category": "other",
+      "pages": 61
+    },
+    {
+      "part": "MCP4725",
+      "manufacturer": "microchip",
+      "url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MSLD/ProductDocuments/DataSheets/MCP4725-Data-Sheet-20002039E.pdf",
+      "sha256": "dfb2e61548e5f4d8010d20e51e9a07c99a8d3f8b20f95112b55e4613298f2fe1",
+      "category": "dac",
+      "pages": 56
+    },
+    {
+      "part": "TPS63020",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/tps63020.pdf",
+      "sha256": "d117773bb7370fd79377bc70ce987eec3469ea5979547a09df52fca5f95b2e69",
+      "category": "power",
+      "pages": 34
+    },
+    {
+      "part": "MCP9700",
+      "manufacturer": "microchip",
+      "url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MSLD/ProductDocuments/DataSheets/MCP970X-Family-Data-Sheet-DS20001942.pdf",
+      "sha256": "5b0e0efe173d5fdaf72c31e697591b0b1cacbd440ec6ba95d742fd587c7aff33",
+      "category": "sensor",
+      "pages": 26
+    },
+    {
+      "part": "REF5025",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/ref50.pdf",
+      "sha256": "eed5016c9f658e49079830e21bdea65bd9a49f9c3bd5a98ac61752cc29000d57",
+      "category": "other",
+      "pages": 52
     }
   ]
 }
