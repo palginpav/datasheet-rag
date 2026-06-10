@@ -20,11 +20,11 @@ Engineering roadmap for datasheet-rag. Six phases; each phase lands as a reviewe
 
 **Goal:** working end-to-end QA with citations, dense-only.
 
-- [ ] Embedding pipeline: nomic-embed-text-v1.5 (CPU-viable), Chroma persistent store
-- [ ] Retriever interface (swappable: dense now, hybrid later)
-- [ ] Generation: Qwen3-4B via Ollama; prompt contract = answer + chunk-level citations + explicit refusal when context is insufficient
-- [ ] CLI: `ask "What is the quiescent current of <part> at 3.3V?"`
-- [ ] 20 smoke questions answered qualitatively; failure notes filed as eval-set candidates
+- [x] Embedding pipeline: nomic-embed-text-v1.5, Chroma persistent store (9,637 chunks indexed)
+- [x] Retriever interface (swappable: dense now, hybrid later)
+- [x] Generation: Qwen3-4B via Ollama; prompt contract = answer + chunk-level citations + explicit refusal when context is insufficient
+- [x] CLI: `ask "What is the quiescent current of <part> at 3.3V?"`
+- [x] 20 smoke questions answered qualitatively (docs/smoke-run.md): 18/18 answerable answered, 2/2 unanswerable refused; 5 observations filed as eval-set candidates
 - **Exit criteria:** cited answers reproducible from a fresh clone; refusal path demonstrated
 
 ## Phase 3 — Evaluation harness
