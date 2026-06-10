@@ -31,11 +31,11 @@ Engineering roadmap for datasheet-rag. Six phases; each phase lands as a reviewe
 
 **Goal:** measurement before optimization.
 
-- [ ] Golden set: ~100 hand-authored questions, stratified — spec lookup (table cell) · pinout/package · conditions-qualified values · cross-section synthesis · cross-datasheet comparison · unanswerable (refusal calibration). Each: question, gold answer, gold chunk IDs
+- [~] Golden set: 25 hand-authored questions seeded (stratified, all values + chunk IDs verified against the index); target ~100 — extension is append-only JSONL, flagged for domain-expert review
 - [ ] Synthetic set: RAGAS testset generation, 300–500 QA pairs
-- [ ] Metrics: retrieval hit@k / MRR / context precision-recall; answer faithfulness + correctness (RAGAS + DeepEval, judge = local Ollama model ≠ generation model)
-- [ ] Human-graded 50-question subset → judge-vs-human agreement table
-- [ ] Scorecard script: one command → markdown results table
+- [x] Metrics: retrieval hit@k / MRR / context recall+precision; answer faithfulness + correctness via local Ollama judge (gpt-oss) ≠ generator (qwen3)
+- [ ] Human-graded subset → judge-vs-human agreement table (next: the judge-stinginess signal from the baseline makes this concrete)
+- [x] Scorecard: `python -m datasheet_rag.eval [--judge]` → docs/eval-scorecard.md + per-question JSONL trace
 - **Exit criteria:** baseline scorecard committed; agreement analysis written up
 
 ## Phase 4 — Hybrid retrieval & ablations
