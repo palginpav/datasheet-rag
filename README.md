@@ -2,7 +2,17 @@
 
 **Ask your datasheet.** Retrieval-augmented question answering over semiconductor datasheets — with table-aware parsing, hybrid retrieval, grounded citations, and a measured answer to the question: *what does fine-tuning buy you that retrieval doesn't?*
 
-> Status: 🚧 active development — see [docs/PLAN.md](docs/PLAN.md) for the build roadmap.
+> Status: 🚧 active development — baseline RAG working end-to-end. See [docs/PLAN.md](docs/PLAN.md) for the roadmap and [docs/smoke-run.md](docs/smoke-run.md) for a 20-question transcript.
+
+```text
+$ python -m datasheet_rag.rag ask "What is the accuracy of the TMP117 temperature sensor?"
+The TMP117 has an accuracy of up to ±0.1 °C (maximum) from -20 °C to 50 °C, ±0.15 °C
+(maximum) from -40 °C to 70 °C, ±0.2 °C (maximum) from -40 °C to 100 °C, ±0.25 °C
+(maximum) from -55 °C to 125 °C, and ±0.3 °C (maximum) from -55 °C to 150 °C [2].
+
+Sources:
+  [2] TMP117 p.1 · 1 Features · f8da020789b9-0000
+```
 
 ## Why
 
@@ -45,16 +55,32 @@ The same constraint shaped the model choices: everything here runs on open weigh
 
 ```bash
 git clone https://github.com/palginpav/datasheet-rag && cd datasheet-rag
-uv sync                                      # or: pip install -e ".[dev]"
-python -m datasheet_rag.corpus.download      # fetch corpus per manifest
-pytest                                       # run tests
+pip install -e ".[dev,ingest,rag]"
+python -m datasheet_rag.corpus.download      # fetch corpus per manifest (PDFs stay local)
+python -m datasheet_rag.ingest               # parse + chunk (Docling)
+python -m datasheet_rag.rag index            # embed into Chroma
+python -m datasheet_rag.rag ask "How much flash memory does the STM32C031C4 have?"
+pytest                                       # 37 tests, no model deps
 ```
+
+Generation runs against a local [Ollama](https://ollama.com) (`ollama pull qwen3:4b`) — no
+closed-API dependency anywhere in the pipeline.
+
+## Current state
+
+| Layer | Status |
+|---|---|
+| Corpus | 40 parts / 38 unique docs, 6 manufacturers, ~2,400 pages, checksum-pinned ([stats](docs/corpus-stats.md)) |
+| Ingestion | Docling parsing + table-aware chunking → 9,637 chunks (4,083 tables); sha256 dedupe with part aliasing |
+| Retrieval | Dense baseline: nomic-embed-text-v1.5 + Chroma, cosine top-k behind a swappable `Retriever` protocol |
+| Generation | Qwen3-4B via Ollama; grounded-answer contract: context-only, `[n]` citations, `NOT IN CONTEXT` refusal |
+| Smoke run | [20 questions](docs/smoke-run.md): 18/18 answerable answered with citations, 2/2 unanswerable refused |
 
 ## Roadmap
 
 - [x] Repo scaffold, manifest schema, corpus downloader
-- [ ] Docling ingestion + table-aware chunking
-- [ ] Baseline dense RAG with citations
+- [x] Docling ingestion + table-aware chunking (tables atomic, row-split with repeated headers)
+- [x] Baseline dense RAG with citations + refusal path
 - [ ] Golden QA set (100 questions) + eval harness (RAGAS / DeepEval, local judge)
 - [ ] Hybrid retrieval (BM25 + RRF) + ablations
 - [ ] QLoRA fine-tuning study (Qwen3, Unsloth) — RAG vs FT vs hybrid
