@@ -141,16 +141,24 @@ def run_eval(
     judge_model: str,
     retriever_name: str = "dense",
     device: str | None = None,
+    closed_book: bool = False,
 ) -> tuple[list[QuestionResult], str]:
     from datasheet_rag.eval.judge import OllamaJudge
-    from datasheet_rag.rag.factory import build_retriever
     from datasheet_rag.rag.generate import OllamaClient
 
     questions = load_golden(golden_path)
-    retriever = build_retriever(retriever_name, store_dir=store_dir, device=device)
     llm = OllamaClient(model=model)
     judge = OllamaJudge(model=judge_model) if judged else None
 
+    if closed_book:
+        from datasheet_rag.eval.closed_book import evaluate_closed_book
+
+        results = [evaluate_closed_book(q, llm, judge) for q in questions]
+        return results, build_scorecard(results, k, judged, retriever="closed-book (no retrieval)")
+
+    from datasheet_rag.rag.factory import build_retriever
+
+    retriever = build_retriever(retriever_name, store_dir=store_dir, device=device)
     results = [evaluate_question(q, retriever, llm, judge, k) for q in questions]
     return results, build_scorecard(results, k, judged, retriever=retriever_name)
 

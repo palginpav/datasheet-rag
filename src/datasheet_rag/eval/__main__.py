@@ -28,9 +28,11 @@ def main(
     judge_model: str = typer.Option("gpt-oss:latest", "--judge-model"),
     retriever: str = typer.Option("dense", "--retriever", help="dense|bm25|hybrid|dense+rerank"),
     device: str | None = typer.Option(None, "--device"),
+    closed_book: bool = typer.Option(False, "--closed-book", help="No retrieval (FT-only arm)"),
 ) -> None:
     results, scorecard = run_eval(
-        golden, k, judge, store_dir, model, judge_model, retriever_name=retriever, device=device
+        golden, k, judge, store_dir, model, judge_model,
+        retriever_name=retriever, device=device, closed_book=closed_book,
     )
     out.write_text(scorecard + "\n", encoding="utf-8")
     trace.parent.mkdir(parents=True, exist_ok=True)
