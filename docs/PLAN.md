@@ -9,9 +9,9 @@ Engineering roadmap for datasheet-rag. Six phases; each phase lands as a reviewe
 - [x] Manifest schema (`data/manifest.json`): `part`, `manufacturer`, `url`, `sha256`, `category`, `pages`
 - [x] Downloader: httpx + retry, checksum verification, polite rate-limiting, `corpus/` git-ignored
 - [ ] Populate manifest: 80–120 datasheets across TI / ST / NXP — MCUs, op-amps, LDOs, interface ICs; chosen for table density and question variety
-- [ ] Docling ingestion: PDF → structured doc (sections, tables, provenance)
-- [ ] Document dedupe by sha256 before indexing — vendors ship one PDF for part variants (observed: OPA591/OPA2591 share a single TI datasheet); index once, map both parts to it
-- [ ] Table-aware chunker: tables → markdown chunks carrying caption + section path; prose → section-bounded chunks (sweep sizes later, Phase 4)
+- [x] Docling ingestion: PDF → structured doc (sections, tables, provenance)
+- [x] Document dedupe by sha256 before indexing — vendors ship one PDF for part variants (observed: OPA591/OPA2591 share a single TI datasheet); index once, map both parts to it
+- [x] Table-aware chunker: tables → markdown chunks carrying caption + section path; prose → section-bounded chunks (sweep sizes later, Phase 4)
 - [ ] Corpus stats notebook: pages, tables/doc, chunk-length distributions
 - [ ] Open-corpus track: RISC-V ISA manual ingestion path for CI + demo (CC-BY-4.0)
 - **Exit criteria:** `download → parse → chunk` runs end-to-end on 10 datasheets + RISC-V manual; chunker unit-tested; CI green
