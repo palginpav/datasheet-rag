@@ -47,6 +47,10 @@ src = ["src", "tests"]
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B"]
 
+[tool.ruff.lint.flake8-bugbear]
+# typer.Option in argument defaults is the documented Typer CLI pattern
+extend-immutable-calls = ["typer.Option"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-q"
