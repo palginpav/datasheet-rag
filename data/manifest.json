@@ -1,5 +1,86 @@
 {
-  "$schema_note": "Corpus manifest. Datasheet PDFs are not redistributable and are never committed; this manifest plus the downloader reproduces the corpus locally. Fields: part (manufacturer part number), manufacturer (ti|st|nxp|...), url (canonical manufacturer PDF URL), sha256 (hex digest of the PDF, null until pinned), category (mcu|opamp|ldo|interface|...), pages (int, null until known).",
+  "$schema_note": "Corpus manifest. Datasheet PDFs are not redistributable and are never committed; this manifest plus the downloader reproduces the corpus locally. Fields: part (manufacturer part number), manufacturer (ti|st|nxp|...), url (canonical manufacturer PDF URL), sha256 (hex digest of the PDF, null until pinned), category (mcu|opamp|ldo|interface|...), pages (int, null until known). ST note: ST files family datasheets under one package variant's name (e.g. stm32g071c8.pdf covers all STM32G071x8/xB) \u2014 the part field matches the document-naming variant.",
   "version": 1,
-  "entries": []
+  "entries": [
+    {
+      "part": "OPA2993",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/opa2993.pdf",
+      "sha256": "e9dcbc00080cba1e45a0e2c8485fe0cbced11f4811e335b897862410861834db",
+      "category": "opamp",
+      "pages": 28
+    },
+    {
+      "part": "OPA620",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/opa620.pdf",
+      "sha256": "cee51afeffc843d408eb7af93621885efb10ff1b4a1d27ecfe91b2162d1e8345",
+      "category": "opamp",
+      "pages": 30
+    },
+    {
+      "part": "OPA2591",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/opa2591.pdf",
+      "sha256": "18a0d8ccab88006bad777d75dfa9df41b562cf772969c1001ef734d5d6f956c5",
+      "category": "opamp",
+      "pages": 28
+    },
+    {
+      "part": "TLV886",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/tlv886.pdf",
+      "sha256": "45292def526e6083ec0a246e8119638b216e3c783aa12f73ac606abdb38d5f65",
+      "category": "opamp",
+      "pages": 38
+    },
+    {
+      "part": "OPA591",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/opa591.pdf",
+      "sha256": "18a0d8ccab88006bad777d75dfa9df41b562cf772969c1001ef734d5d6f956c5",
+      "category": "opamp",
+      "pages": 28
+    },
+    {
+      "part": "STM32G071C8",
+      "manufacturer": "st",
+      "url": "https://www.st.com/resource/en/datasheet/stm32g071c8.pdf",
+      "sha256": "a83ee1377da65257fe5e7d09a2da8027ecff1bce0594a2176b18cddca47fa7cc",
+      "category": "mcu",
+      "pages": 143
+    },
+    {
+      "part": "STM32C031C4",
+      "manufacturer": "st",
+      "url": "https://www.st.com/resource/en/datasheet/stm32c031c4.pdf",
+      "sha256": "896fc5601df00779e650ff8e9d52ac8f800ce14d404d19f976383ae205053f47",
+      "category": "mcu",
+      "pages": 103
+    },
+    {
+      "part": "STM32F103RB",
+      "manufacturer": "st",
+      "url": "https://www.st.com/resource/en/datasheet/stm32f103rb.pdf",
+      "sha256": "1e54ce18e6c34c5b4a78986f26e245e143748c721009fc9af5953795c30686bc",
+      "category": "mcu",
+      "pages": 114
+    },
+    {
+      "part": "STM32F072RB",
+      "manufacturer": "st",
+      "url": "https://www.st.com/resource/en/datasheet/stm32f072rb.pdf",
+      "sha256": "b01391f094699aeb6a4d952b587c06d13a81a0d300161342efa0534f6695ef08",
+      "category": "mcu",
+      "pages": 128
+    },
+    {
+      "part": "STM32C5A3ZG",
+      "manufacturer": "st",
+      "url": "https://www.st.com/resource/en/datasheet/stm32c5a3zg.pdf",
+      "sha256": "a523bb3c04adf0e97ae44cdc29ecc75bd557e95b28376399a5ffb11d0e89dc08",
+      "category": "mcu",
+      "pages": 149
+    }
+  ]
 }
