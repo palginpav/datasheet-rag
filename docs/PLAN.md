@@ -42,12 +42,12 @@ Engineering roadmap for datasheet-rag. Six phases; each phase lands as a reviewe
 
 **Goal:** the headline retrieval results.
 
-- [ ] BM25 index + reciprocal-rank fusion with dense
-- [ ] Ablation matrix: dense-only / BM25-only / hybrid / hybrid+rerank (bge-reranker, optional arm)
-- [ ] Chunking ablation: table-aware vs naive splitter (expected biggest delta)
-- [ ] Chunk-size sweep
-- [ ] Part-number exact-match stress set (LM358 vs LM359 class confusions)
-- **Exit criteria:** ablation tables in README; analysis section written
+- [x] BM25 index + reciprocal-rank fusion with dense (incl. dense-weighted RRF)
+- [x] Ablation matrix: dense / BM25 / hybrid / hybrid-w3 / dense+rerank (docs/ablation.md)
+- [x] Part-number routing analysis (doc-hit@k metric): found dense already routes at 1.0; BM25 weak due to per-chunk part prefix
+- [x] Cross-encoder reranker (bge-reranker-base): the winner — MCU hit@k 0.75 → 0.94, overall 0.92 → 0.97; wired as `--retriever dense+rerank`
+- [ ] Chunking ablation: table-aware vs naive, and drop-the-part-prefix BM25 retest (follow-up the analysis points to)
+- **Exit criteria:** ablation table + analysis written (docs/ablation.md); winner wired into eval and ask CLIs
 
 ## Phase 5 — Fine-tuning study
 

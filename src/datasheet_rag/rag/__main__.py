@@ -47,17 +47,16 @@ def ask(
     k: int = typer.Option(8, "--k"),
     store_dir: Path = typer.Option(Path("chroma"), "--store"),
     model: str = typer.Option("qwen3:4b", "--model"),
+    retriever: str = typer.Option("dense", "--retriever", help="dense|bm25|hybrid|dense+rerank"),
     show_chunks: bool = typer.Option(False, "--show-chunks"),
 ) -> None:
     """Ask a question against the indexed corpus."""
-    from datasheet_rag.rag.embed import NomicEmbedder
+    from datasheet_rag.rag.factory import build_retriever
     from datasheet_rag.rag.generate import OllamaClient
     from datasheet_rag.rag.pipeline import ask as run_ask
-    from datasheet_rag.rag.retrieve import DenseRetriever
-    from datasheet_rag.rag.store import ChunkStore
 
-    retriever = DenseRetriever(ChunkStore(store_dir), NomicEmbedder())
-    result = run_ask(question, retriever, OllamaClient(model=model), k=k)
+    retriever_impl = build_retriever(retriever, store_dir=store_dir)
+    result = run_ask(question, retriever_impl, OllamaClient(model=model), k=k)
 
     typer.echo(result.answer)
     if result.citations:

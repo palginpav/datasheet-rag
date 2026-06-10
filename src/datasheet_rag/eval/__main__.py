@@ -26,8 +26,12 @@ def main(
     store_dir: Path = typer.Option(Path("chroma"), "--store"),
     model: str = typer.Option("qwen3:4b", "--model"),
     judge_model: str = typer.Option("gpt-oss:latest", "--judge-model"),
+    retriever: str = typer.Option("dense", "--retriever", help="dense|bm25|hybrid|dense+rerank"),
+    device: str | None = typer.Option(None, "--device"),
 ) -> None:
-    results, scorecard = run_eval(golden, k, judge, store_dir, model, judge_model)
+    results, scorecard = run_eval(
+        golden, k, judge, store_dir, model, judge_model, retriever_name=retriever, device=device
+    )
     out.write_text(scorecard + "\n", encoding="utf-8")
     trace.parent.mkdir(parents=True, exist_ok=True)
     write_trace(results, trace)

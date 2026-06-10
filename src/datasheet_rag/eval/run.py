@@ -131,16 +131,21 @@ def build_scorecard(results: list[QuestionResult], k: int, judged: bool) -> str:
 
 
 def run_eval(
-    golden_path: Path, k: int, judged: bool, store_dir: Path, model: str, judge_model: str
+    golden_path: Path,
+    k: int,
+    judged: bool,
+    store_dir: Path,
+    model: str,
+    judge_model: str,
+    retriever_name: str = "dense",
+    device: str | None = None,
 ) -> tuple[list[QuestionResult], str]:
     from datasheet_rag.eval.judge import OllamaJudge
-    from datasheet_rag.rag.embed import NomicEmbedder
+    from datasheet_rag.rag.factory import build_retriever
     from datasheet_rag.rag.generate import OllamaClient
-    from datasheet_rag.rag.retrieve import DenseRetriever
-    from datasheet_rag.rag.store import ChunkStore
 
     questions = load_golden(golden_path)
-    retriever = DenseRetriever(ChunkStore(store_dir), NomicEmbedder())
+    retriever = build_retriever(retriever_name, store_dir=store_dir, device=device)
     llm = OllamaClient(model=model)
     judge = OllamaJudge(model=judge_model) if judged else None
 
