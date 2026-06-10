@@ -1,53 +1,50 @@
 # Evaluation scorecard
 
-Golden set: 34 questions (30 answerable, 4 unanswerable) · k=8 · dense retrieval · judge=gpt-oss (faithfulness/correctness 1-5)
+Golden set: 100 questions (91 answerable, 9 unanswerable) · k=8 · dense retrieval · judge=gpt-oss (faithfulness/correctness 1-5)
 
 ## Retrieval & answer (answerable questions)
 
 | Metric | Mean |
 |---|---|
-| hit@8 | 0.9 |
-| MRR | 0.621 |
-| context recall@8 | 0.85 |
-| context precision@8 | 0.117 |
-| must-include coverage | 0.878 |
-| faithfulness (1-5) | 4.867 |
-| correctness (1-5) | 4.133 |
+| hit@8 | 0.923 |
+| MRR | 0.657 |
+| context recall@8 | 0.896 |
+| context precision@8 | 0.122 |
+| must-include coverage | 0.87 |
+| faithfulness (1-5) | 4.912 |
+| correctness (1-5) | 4.275 |
 
 ## Refusal calibration (unanswerable questions)
 
-- correctly refused: 4/4
+- correctly refused: 9/9
 
 ## Per-category hit@k
 
 | Category | n | hit@k | MRR |
 |---|---|---|---|
-| comparison | 4 | 1.0 | 0.625 |
-| conditions | 6 | 1.0 | 0.722 |
-| cross-section | 1 | 1.0 | 1.0 |
-| mcu | 6 | 0.5 | 0.306 |
-| pinout | 1 | 1.0 | 0.5 |
-| spec-lookup | 12 | 1.0 | 0.704 |
-
+| comparison | 10 | 1.0 | 0.717 |
+| conditions | 14 | 0.929 | 0.717 |
+| cross-section | 6 | 1.0 | 0.833 |
+| mcu | 16 | 0.75 | 0.451 |
+| pinout | 5 | 1.0 | 0.7 |
+| spec-lookup | 40 | 0.95 | 0.671 |
 
 ## Reading the numbers
 
-- **faithfulness 4.87 / correctness 4.13**: essentially no hallucination, answers usually
-  right. The correctness gap is largely the judge penalizing *terse-but-correct* replies
-  (e.g. "±250µV [2]" scored 3 for omitting "typical"). See docs/judge-agreement.md.
-- **context precision@8 = 0.12 is expected, not a defect**: with 1–2 gold chunks at k=8 the
-  ceiling is ~0.12–0.25. **Recall@8 (0.85)** is the meaningful retrieval number.
+- **faithfulness 4.91 / correctness 4.28** across 91 answerable questions: no
+  meaningful hallucination; the correctness gap is mostly the judge under-scoring
+  terse-but-correct answers (see docs/judge-agreement.md).
+- **context precision@8 = 0.12 is expected** (1–2 gold chunks at k=8 → ceiling ~0.12–0.25);
+  **recall@8 (0.90)** is the meaningful retrieval number.
 
 ## Findings → Phase 4 motivation
 
-1. **MCU retrieval is the weak category (hit@8 0.5).** Exact part-number queries
-   (e.g. "STM32C031C4 flash") see the device-summary chunk crowded below k=8 by sibling
-   STM32 datasheets — the canonical case **hybrid BM25 retrieval (Phase 4)** targets: a
-   lexical match on the part number surfaces the summary regardless of dense crowding.
-2. **One wrong value (LD1117 max current)** — retrieval bound a different current figure;
-   worth tracing in Phase 4.
-3. **Golden-annotation gaps for the human pass**: a few answers are correct but score a
-   retrieval miss because gold_chunk_ids list only one of several evidence chunks.
+1. **MCU is the weak category (hit@8 0.75, MRR 0.45) — now robust across 16 questions.**
+   Exact part-number queries (e.g. flash/SRAM of a specific STM32) see the device-summary
+   chunk crowded below k=8 by sibling STM32 datasheets. This is the canonical case
+   **hybrid BM25 + RRF (Phase 4)** targets — a lexical hit on the part number surfaces the
+   summary regardless of dense crowding. Every other category is ≥ 0.93 hit@8.
+2. **Refusal calibration perfect (9/9)** including adversarial traps (op-amp Bluetooth,
+   EEPROM CPU cores, regulator firmware) — refused, not hallucinated.
 
-Refusal calibration is perfect (4/4), including the adversarial "WiFi transmit power of an
-op-amp" trap — refused, not hallucinated.
+This 100-question scorecard is the baseline Phase 4 must beat, especially on MCU hit@k.

@@ -31,7 +31,7 @@ Engineering roadmap for datasheet-rag. Six phases; each phase lands as a reviewe
 
 **Goal:** measurement before optimization.
 
-- [~] Golden set: 34 hand-authored questions (all 7 categories; values + chunk IDs verified against the index); target ~100 — append-only JSONL, open for domain-expert extension
+- [x] Golden set: 100 hand-authored questions across all 7 categories; every value + chunk ID verified against the index (spec-lookup 40, mcu 16, conditions 14, comparison 10, unanswerable 9, cross-section 6, pinout 5)
 - [x] Synthetic set: local-model generator (`scripts/synthesize.py`) — grounded Q/A pairs marked needs_review; replaces RAGAS testset gen, whose 0.4.x pipeline has a broken langchain dep chain and assumes a hosted generator
 - [x] Metrics: retrieval hit@k / MRR / context recall+precision; answer faithfulness + correctness via local Ollama judge (gpt-oss) ≠ generator (qwen3)
 - [x] Judge-vs-human agreement tooling: `scripts/grade.py` (interactive human grading) + `scripts/judge_agreement.py` (agreement stats + mechanical over-strictness cross-check). Human grading pass is the remaining run; 6 over-strictness candidates already flagged
