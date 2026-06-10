@@ -81,7 +81,9 @@ def _avg(vals: list[float | int | None]) -> float | None:
     return round(metrics.mean([float(v) for v in nums]), 3) if nums else None
 
 
-def build_scorecard(results: list[QuestionResult], k: int, judged: bool) -> str:
+def build_scorecard(
+    results: list[QuestionResult], k: int, judged: bool, retriever: str = "dense"
+) -> str:
     answerable = [r for r in results if r.answerable]
     unanswerable = [r for r in results if not r.answerable]
     lines = [
@@ -89,7 +91,7 @@ def build_scorecard(results: list[QuestionResult], k: int, judged: bool) -> str:
         "",
         f"Golden set: {len(results)} questions "
         f"({len(answerable)} answerable, {len(unanswerable)} unanswerable) · "
-        f"k={k} · dense retrieval · "
+        f"k={k} · {retriever} retrieval · "
         f"judge={'gpt-oss (faithfulness/correctness 1-5)' if judged else 'off'}",
         "",
         "## Retrieval & answer (answerable questions)",
@@ -150,7 +152,7 @@ def run_eval(
     judge = OllamaJudge(model=judge_model) if judged else None
 
     results = [evaluate_question(q, retriever, llm, judge, k) for q in questions]
-    return results, build_scorecard(results, k, judged)
+    return results, build_scorecard(results, k, judged, retriever=retriever_name)
 
 
 def write_trace(results: list[QuestionResult], path: Path) -> None:

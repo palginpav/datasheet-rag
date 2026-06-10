@@ -38,7 +38,9 @@ manifest.json ──> download_corpus ──> Docling parse ──> table-aware 
                                                           ▼
                                        Qwen3 (local) ── grounded answer + citations
                                                           ▼
-                                          eval harness (golden set · RAGAS · DeepEval)
+                          (optional) cross-encoder rerank ── grounded answer + citations
+                                                          ▼
+                                       eval harness (golden set · local judge)
 ```
 
 ## Corpus & licensing — read this first
@@ -59,8 +61,8 @@ pip install -e ".[dev,ingest,rag]"
 python -m datasheet_rag.corpus.download      # fetch corpus per manifest (PDFs stay local)
 python -m datasheet_rag.ingest               # parse + chunk (Docling)
 python -m datasheet_rag.rag index            # embed into Chroma
-python -m datasheet_rag.rag ask "How much flash memory does the STM32C031C4 have?"
-pytest                                       # 37 tests, no model deps
+python -m datasheet_rag.rag ask "How much flash memory does the STM32C031C4 have?" --retriever dense+rerank
+pytest                                       # tests run without model/heavy deps
 ```
 
 Generation runs against a local [Ollama](https://ollama.com) (`ollama pull qwen3:4b`) — no
@@ -70,19 +72,34 @@ closed-API dependency anywhere in the pipeline.
 
 | Layer | Status |
 |---|---|
-| Corpus | 40 parts / 38 unique docs, 6 manufacturers, ~2,400 pages, checksum-pinned ([stats](docs/corpus-stats.md)) |
-| Ingestion | Docling parsing + table-aware chunking → 9,637 chunks (4,083 tables); sha256 dedupe with part aliasing |
-| Retrieval | Dense baseline: nomic-embed-text-v1.5 + Chroma, cosine top-k behind a swappable `Retriever` protocol |
+| Corpus | 99 parts / 90 unique docs, 6 manufacturers, ~8,300 pages, checksum-pinned ([stats](docs/corpus-stats.md)) |
+| Ingestion | Docling parsing + table-aware chunking → 25,597 chunks (6,222 tables); sha256 dedupe with part aliasing |
+| Retrieval | nomic-embed + Chroma dense, BM25, RRF hybrid, and a cross-encoder reranker behind a swappable `Retriever` protocol |
 | Generation | Qwen3-4B via Ollama; grounded-answer contract: context-only, `[n]` citations, `NOT IN CONTEXT` refusal |
-| Smoke run | [20 questions](docs/smoke-run.md): 18/18 answerable answered with citations, 2/2 unanswerable refused |
+| Evaluation | 100-question golden set, local gpt-oss judge, synthetic generator, judge-agreement tooling ([scorecard](docs/eval-scorecard.md)) |
+
+## Results
+
+Retrieval over the 100-question golden set ([full ablation](docs/ablation.md)):
+
+| Retriever | hit@8 | recall@8 | MCU hit@8 |
+|---|---|---|---|
+| dense (baseline) | 0.92 | 0.90 | 0.75 |
+| naive BM25+RRF hybrid | 0.86 | 0.84 | 0.62 |
+| **dense + cross-encoder rerank** | **0.97** | **0.95** | **0.94** |
+
+The intuitive "add BM25 for part numbers" hybrid *didn't* help — dense already routes to the
+right document every time, and the residual weakness was within-document chunk ranking. A
+cross-encoder reranker fixed exactly that. End-to-end with the judge, correctness rises
+4.28 → 4.39 and refusal calibration stays 9/9.
 
 ## Roadmap
 
 - [x] Repo scaffold, manifest schema, corpus downloader
 - [x] Docling ingestion + table-aware chunking (tables atomic, row-split with repeated headers)
 - [x] Baseline dense RAG with citations + refusal path
-- [ ] Golden QA set (100 questions) + eval harness (RAGAS / DeepEval, local judge)
-- [ ] Hybrid retrieval (BM25 + RRF) + ablations
+- [x] 100-question golden set + eval harness (local judge, synthetic generator, agreement tooling)
+- [x] Hybrid retrieval (BM25 + RRF) + reranker + ablation
 - [ ] QLoRA fine-tuning study (Qwen3, Unsloth) — RAG vs FT vs hybrid
 - [ ] Gradio demo (HF Spaces)
 
