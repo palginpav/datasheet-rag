@@ -321,6 +321,942 @@
       "sha256": "eed5016c9f658e49079830e21bdea65bd9a49f9c3bd5a98ac61752cc29000d57",
       "category": "other",
       "pages": 52
+    },
+    {
+      "part": "OPA211",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/opa211.pdf",
+      "sha256": "91579dba067c071742d056acdd2f5ea3c5baa7a5efa19a32ddfd6a6facc08bcf",
+      "category": "opamp",
+      "pages": 52
+    },
+    {
+      "part": "OPA2211",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/opa211.pdf",
+      "sha256": "91579dba067c071742d056acdd2f5ea3c5baa7a5efa19a32ddfd6a6facc08bcf",
+      "category": "opamp",
+      "pages": 52
+    },
+    {
+      "part": "OPA1612",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/opa1612.pdf",
+      "sha256": "d1df82fa9ca489528d4d676c86e9770e4154fbc7d984093e1ba0a9ae33512de6",
+      "category": "opamp",
+      "pages": 34
+    },
+    {
+      "part": "OPA1622",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/opa1622.pdf",
+      "sha256": "505556d18113e86aed84f20c1dbcfc6b4ad66ccdc5202998bd883f7a7eac9824",
+      "category": "opamp",
+      "pages": 37
+    },
+    {
+      "part": "OPA847",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/opa847.pdf",
+      "sha256": "3ed32965b935a15ef70e110380ec955871da1c5516ebe0d0886b3f7d6e9f4b04",
+      "category": "opamp",
+      "pages": 33
+    },
+    {
+      "part": "OPA657",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/opa657.pdf",
+      "sha256": "0a8da2e079796d2dd8084356055d6da6d122e1d890843c6acd26817d3c84d50d",
+      "category": "opamp",
+      "pages": 40
+    },
+    {
+      "part": "OPA656",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/opa656.pdf",
+      "sha256": "48e593648750468983160281791979ae3679bcf02ca2c192f4a8d2f7a59a3cee",
+      "category": "opamp",
+      "pages": 31
+    },
+    {
+      "part": "THS4031",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/ths4031.pdf",
+      "sha256": "06871dc49415b3202dd95eed348322e5db45c850a935dbc1af82e79ff3dbd000",
+      "category": "opamp",
+      "pages": 42
+    },
+    {
+      "part": "THS4521",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/ths4521.pdf",
+      "sha256": "faa8623f6b43cd28ef787e2b515660196fb114abf2cadb0c25b834e29e6e4985",
+      "category": "opamp",
+      "pages": 71
+    },
+    {
+      "part": "OPA354",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/opa354.pdf",
+      "sha256": "879853d307503241a873fad4cf445734bdeffb5bd9827e7941c9bbcf24d7b0e6",
+      "category": "opamp",
+      "pages": 51
+    },
+    {
+      "part": "OPA2354",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/opa2354.pdf",
+      "sha256": "879853d307503241a873fad4cf445734bdeffb5bd9827e7941c9bbcf24d7b0e6",
+      "category": "opamp",
+      "pages": 51
+    },
+    {
+      "part": "ADA4528-1",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/ADA4528-1.pdf",
+      "sha256": "fce0580e62c03c6e03b5777611bfbbf28574e03bf033de3d691f3c095861592f",
+      "category": "opamp",
+      "pages": 24
+    },
+    {
+      "part": "ADA4528-2",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/ADA4528-2.pdf",
+      "sha256": null,
+      "category": "opamp",
+      "pages": null
+    },
+    {
+      "part": "AD8671",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/AD8671_8672_8674.pdf",
+      "sha256": null,
+      "category": "opamp",
+      "pages": null
+    },
+    {
+      "part": "AD8672",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/AD8671_8672_8674.pdf",
+      "sha256": null,
+      "category": "opamp",
+      "pages": null
+    },
+    {
+      "part": "AD8065",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/AD8065_8066.pdf",
+      "sha256": null,
+      "category": "opamp",
+      "pages": null
+    },
+    {
+      "part": "AD8066",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/AD8065_8066.pdf",
+      "sha256": null,
+      "category": "opamp",
+      "pages": null
+    },
+    {
+      "part": "LTC6268-10",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/626810f.pdf",
+      "sha256": null,
+      "category": "opamp",
+      "pages": null
+    },
+    {
+      "part": "LTC6240",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/ltc6240.pdf",
+      "sha256": null,
+      "category": "opamp",
+      "pages": null
+    },
+    {
+      "part": "TSV911",
+      "manufacturer": "st",
+      "url": "https://www.st.com/resource/en/datasheet/tsv911.pdf",
+      "sha256": "ecb86d68f6ad6e4e6a67a1543fc8ba2e25ebb61ac614deabc14b3571dd0ae3eb",
+      "category": "opamp",
+      "pages": 30
+    },
+    {
+      "part": "TSV912",
+      "manufacturer": "st",
+      "url": "https://www.st.com/resource/en/datasheet/tsv912.pdf",
+      "sha256": "ecb86d68f6ad6e4e6a67a1543fc8ba2e25ebb61ac614deabc14b3571dd0ae3eb",
+      "category": "opamp",
+      "pages": 30
+    },
+    {
+      "part": "TSB712",
+      "manufacturer": "st",
+      "url": "https://www.st.com/resource/en/datasheet/tsb712.pdf",
+      "sha256": "2b94b95710ddccea5358e74ae3e0663408dda0b739db9d625162ed6b5d7d4120",
+      "category": "opamp",
+      "pages": 32
+    },
+    {
+      "part": "TSV321",
+      "manufacturer": "st",
+      "url": "https://www.st.com/resource/en/datasheet/tsv321.pdf",
+      "sha256": "d94fefad7ca65758dc326812ffc56fc2fd4ccf3eaa9f1d6cf473a58607dd9a27",
+      "category": "opamp",
+      "pages": 20
+    },
+    {
+      "part": "OPA376",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/opa376.pdf",
+      "sha256": "172612815994596d5bc53d89090845e728bff288f29184fd28773a68970cecaa",
+      "category": "opamp",
+      "pages": 52
+    },
+    {
+      "part": "OPA333",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/opa333.pdf",
+      "sha256": "7555c5636eb8ebbaa6c5cccb1edbc881bccc77b71e432702590af8ac53252fd1",
+      "category": "opamp",
+      "pages": 49
+    },
+    {
+      "part": "OPA2333",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/opa2333.pdf",
+      "sha256": "7555c5636eb8ebbaa6c5cccb1edbc881bccc77b71e432702590af8ac53252fd1",
+      "category": "opamp",
+      "pages": 49
+    },
+    {
+      "part": "AD8610",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/AD8610_8620.pdf",
+      "sha256": null,
+      "category": "opamp",
+      "pages": null
+    },
+    {
+      "part": "AD8620",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/AD8610_8620.pdf",
+      "sha256": null,
+      "category": "opamp",
+      "pages": null
+    },
+    {
+      "part": "LTC1564",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/1564fa.pdf",
+      "sha256": null,
+      "category": "other",
+      "pages": null
+    },
+    {
+      "part": "LT1568",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/1568f.pdf",
+      "sha256": null,
+      "category": "other",
+      "pages": null
+    },
+    {
+      "part": "LT1567",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/1567fa.pdf",
+      "sha256": null,
+      "category": "other",
+      "pages": null
+    },
+    {
+      "part": "UAF42",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/uaf42.pdf",
+      "sha256": "9bd62b3a34466f860bf877772498296e3f81ff733dfd0b8ad755b1c0ae528650",
+      "category": "other",
+      "pages": 16
+    },
+    {
+      "part": "MAX7400",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX7400-MAX7407.pdf",
+      "sha256": null,
+      "category": "other",
+      "pages": null
+    },
+    {
+      "part": "MAX7480",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX7480.pdf",
+      "sha256": null,
+      "category": "other",
+      "pages": null
+    },
+    {
+      "part": "MF10",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/mf10-n.pdf",
+      "sha256": "0e837564aa0bc5e6b3f78bd95e3fa45b0bf7c8554989e4f76d9d86b3c876079d",
+      "category": "other",
+      "pages": 35
+    },
+    {
+      "part": "LTC1069-1",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/ltc1069-1.pdf",
+      "sha256": null,
+      "category": "other",
+      "pages": null
+    },
+    {
+      "part": "AD9833",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/ad9833.pdf",
+      "sha256": null,
+      "category": "other",
+      "pages": null
+    },
+    {
+      "part": "AD9834",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/AD9834.pdf",
+      "sha256": null,
+      "category": "other",
+      "pages": null
+    },
+    {
+      "part": "AD9850",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/AD9850.pdf",
+      "sha256": null,
+      "category": "other",
+      "pages": null
+    },
+    {
+      "part": "AD9851",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/ad9851.pdf",
+      "sha256": null,
+      "category": "other",
+      "pages": null
+    },
+    {
+      "part": "AD9912",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/AD9912.pdf",
+      "sha256": null,
+      "category": "other",
+      "pages": null
+    },
+    {
+      "part": "AD9958",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/AD9958.pdf",
+      "sha256": null,
+      "category": "other",
+      "pages": null
+    },
+    {
+      "part": "ADF4351",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/ADF4351.pdf",
+      "sha256": null,
+      "category": "other",
+      "pages": null
+    },
+    {
+      "part": "ADF4355",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/ADF4355.pdf",
+      "sha256": null,
+      "category": "other",
+      "pages": null
+    },
+    {
+      "part": "ADF5355",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/ADF5355.pdf",
+      "sha256": null,
+      "category": "other",
+      "pages": null
+    },
+    {
+      "part": "ADF4002",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/ADF4002.pdf",
+      "sha256": null,
+      "category": "other",
+      "pages": null
+    },
+    {
+      "part": "LMX2594",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/lmx2594.pdf",
+      "sha256": "8bdaf10949ee3459bd04e8e2353c596374f12bad05401b0b864b9837b7b312f9",
+      "category": "other",
+      "pages": 76
+    },
+    {
+      "part": "LMX2572",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/lmx2572.pdf",
+      "sha256": "b984e699b503618c8e12d39a638f7b2f3eecb22003ba91f8b6b3e9d2cf238632",
+      "category": "other",
+      "pages": 90
+    },
+    {
+      "part": "LMK04828",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/lmk04828.pdf",
+      "sha256": "3f0dea984f644a9e4031f0412d952d5234f5822181a0ca2539f14b306024bd3c",
+      "category": "other",
+      "pages": 130
+    },
+    {
+      "part": "AD620",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/ad620.pdf",
+      "sha256": null,
+      "category": "other",
+      "pages": null
+    },
+    {
+      "part": "AD623",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/AD623.pdf",
+      "sha256": null,
+      "category": "other",
+      "pages": null
+    },
+    {
+      "part": "AD8421",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/AD8421.pdf",
+      "sha256": null,
+      "category": "other",
+      "pages": null
+    },
+    {
+      "part": "INA128",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/ina128.pdf",
+      "sha256": "e3e5a664352c716b5e3af9832b4167e4594e591935d1148759e695ada3176c85",
+      "category": "other",
+      "pages": 42
+    },
+    {
+      "part": "INA129",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/ina129.pdf",
+      "sha256": "e3e5a664352c716b5e3af9832b4167e4594e591935d1148759e695ada3176c85",
+      "category": "other",
+      "pages": 42
+    },
+    {
+      "part": "INA826",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/ina826.pdf",
+      "sha256": "cf6f4544b15da0b6a8deb17e16f9b3cfb96c1c457af791c12c7e27c90b66e8b3",
+      "category": "other",
+      "pages": 51
+    },
+    {
+      "part": "INA821",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/ina821.pdf",
+      "sha256": "dee4f0046e76bb9fbe0617f611f181a9b73a5f99998ec02566c3fb0e22c818a5",
+      "category": "other",
+      "pages": 50
+    },
+    {
+      "part": "AD8331",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/AD8331_8332_8334.pdf",
+      "sha256": null,
+      "category": "other",
+      "pages": null
+    },
+    {
+      "part": "ADL5330",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/adl5330.pdf",
+      "sha256": null,
+      "category": "other",
+      "pages": null
+    },
+    {
+      "part": "AD8307",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/AD8307.pdf",
+      "sha256": null,
+      "category": "other",
+      "pages": null
+    },
+    {
+      "part": "AD8362",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/AD8362.pdf",
+      "sha256": null,
+      "category": "other",
+      "pages": null
+    },
+    {
+      "part": "ADL5801",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/ADL5801.pdf",
+      "sha256": null,
+      "category": "other",
+      "pages": null
+    },
+    {
+      "part": "TLV3501",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/tlv3501.pdf",
+      "sha256": "b9a2a4a79441d2254c0da0ae52c41120cd65b09e928329ebc699ffed06567189",
+      "category": "other",
+      "pages": 33
+    },
+    {
+      "part": "ADCMP601",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/ADCMP601_602_603_604_605_606.pdf",
+      "sha256": null,
+      "category": "other",
+      "pages": null
+    },
+    {
+      "part": "MAX9601",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX9601.pdf",
+      "sha256": null,
+      "category": "other",
+      "pages": null
+    },
+    {
+      "part": "ADS1278",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/ads1278.pdf",
+      "sha256": "c4ee646d3ae1dcca5c72713f2f6e0ea8e660b018eea26050a672ac7960bddb84",
+      "category": "adc",
+      "pages": 52
+    },
+    {
+      "part": "ADS1256",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/ads1256.pdf",
+      "sha256": "9da3323db162b59329ec1a865829441ff1605279cd802fe879649b6f54e100e6",
+      "category": "adc",
+      "pages": 49
+    },
+    {
+      "part": "ADS131M04",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/ads131m04.pdf",
+      "sha256": "487bfd27103d0bacbe3c5136b7613045230ad38354e9f20a0f879c70dba90909",
+      "category": "adc",
+      "pages": 105
+    },
+    {
+      "part": "AD7124-4",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/AD7124-4.pdf",
+      "sha256": null,
+      "category": "adc",
+      "pages": null
+    },
+    {
+      "part": "AD7124-8",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/AD7124-8.pdf",
+      "sha256": null,
+      "category": "adc",
+      "pages": null
+    },
+    {
+      "part": "AD4111",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/AD4111.pdf",
+      "sha256": null,
+      "category": "adc",
+      "pages": null
+    },
+    {
+      "part": "LTC2400",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/2400fa.pdf",
+      "sha256": null,
+      "category": "adc",
+      "pages": null
+    },
+    {
+      "part": "LTC2440",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/2440fe.pdf",
+      "sha256": null,
+      "category": "adc",
+      "pages": null
+    },
+    {
+      "part": "AD9226",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/AD9226.pdf",
+      "sha256": null,
+      "category": "adc",
+      "pages": null
+    },
+    {
+      "part": "AD9245",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/AD9245.pdf",
+      "sha256": null,
+      "category": "adc",
+      "pages": null
+    },
+    {
+      "part": "AD7606",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/AD7606.pdf",
+      "sha256": null,
+      "category": "adc",
+      "pages": null
+    },
+    {
+      "part": "ADS9110",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/ads9110.pdf",
+      "sha256": "85e0cc98d936745c9d54df9cfe4f2b75727d1d4f19efba5038e912a1b35c5dd1",
+      "category": "adc",
+      "pages": 70
+    },
+    {
+      "part": "AD4630-24",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/ad4630-24.pdf",
+      "sha256": null,
+      "category": "adc",
+      "pages": null
+    },
+    {
+      "part": "AD5680",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/AD5680.pdf",
+      "sha256": null,
+      "category": "dac",
+      "pages": null
+    },
+    {
+      "part": "AD5791",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/AD5791.pdf",
+      "sha256": null,
+      "category": "dac",
+      "pages": null
+    },
+    {
+      "part": "DAC8551",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/dac8551.pdf",
+      "sha256": "56fcdb7afc6c24286050334ff328fd1b8778542770bf9587fbad36b9a9d2115b",
+      "category": "dac",
+      "pages": 31
+    },
+    {
+      "part": "DAC8811",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/dac8811.pdf",
+      "sha256": "28e74c7b4fe95176c8efb9ef07210178eef3ac9c0ebc91d92e61a49963b663e4",
+      "category": "dac",
+      "pages": 31
+    },
+    {
+      "part": "AD9744",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/AD9744.pdf",
+      "sha256": null,
+      "category": "dac",
+      "pages": null
+    },
+    {
+      "part": "AD9767",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/AD9767.pdf",
+      "sha256": null,
+      "category": "dac",
+      "pages": null
+    },
+    {
+      "part": "DAC7612",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/dac7612.pdf",
+      "sha256": "a2fac7b5e396a9195a3c452c8bae76d6f0ace7caebaafd823c67cce486d63ab0",
+      "category": "dac",
+      "pages": 18
+    },
+    {
+      "part": "AD5443",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/AD5443.pdf",
+      "sha256": null,
+      "category": "dac",
+      "pages": null
+    },
+    {
+      "part": "AD5453",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/AD5453.pdf",
+      "sha256": null,
+      "category": "dac",
+      "pages": null
+    },
+    {
+      "part": "STM32F401RE",
+      "manufacturer": "st",
+      "url": "https://www.st.com/resource/en/datasheet/stm32f401re.pdf",
+      "sha256": "4d82d74fd0b42a7db787286a1d6ede6411955e49fa9c7ac901b92a08ed817302",
+      "category": "mcu",
+      "pages": 137
+    },
+    {
+      "part": "STM32F446RE",
+      "manufacturer": "st",
+      "url": "https://www.st.com/resource/en/datasheet/stm32f446re.pdf",
+      "sha256": "5cea36b6dc2b623dbe7710b7b75bcb628043aa3bca0f981b7d493c46cc4e6327",
+      "category": "mcu",
+      "pages": 197
+    },
+    {
+      "part": "STM32F411RE",
+      "manufacturer": "st",
+      "url": "https://www.st.com/resource/en/datasheet/stm32f411re.pdf",
+      "sha256": "d1a6c24c17fad99dc1cce858e91475d7c53ab1bc029e1c119bb3e60f0e92a64c",
+      "category": "mcu",
+      "pages": 151
+    },
+    {
+      "part": "STM32G474RE",
+      "manufacturer": "st",
+      "url": "https://www.st.com/resource/en/datasheet/stm32g474re.pdf",
+      "sha256": "b018e20dbe34b63a43e49365518b186ef0e0e8e899deeabc1c9f53a3a10c1add",
+      "category": "mcu",
+      "pages": 236
+    },
+    {
+      "part": "STM32H743ZI",
+      "manufacturer": "st",
+      "url": "https://www.st.com/resource/en/datasheet/stm32h743zi.pdf",
+      "sha256": "f6e620179006c8c4d497b477ba065edc89c6dd9ac24d9debb3362910651f42ee",
+      "category": "mcu",
+      "pages": 357
+    },
+    {
+      "part": "STM32H750VB",
+      "manufacturer": "st",
+      "url": "https://www.st.com/resource/en/datasheet/stm32h750vb.pdf",
+      "sha256": "40d31484a7c50adc849c455f7b80f29d6a99dc11e3913f2fd92ef346ece7bb53",
+      "category": "mcu",
+      "pages": 335
+    },
+    {
+      "part": "STM32L476RG",
+      "manufacturer": "st",
+      "url": "https://www.st.com/resource/en/datasheet/stm32l476rg.pdf",
+      "sha256": "a45a857e3aa75ac166dd532c76d76d5dd8377b9c5bf6f15c03c9cf85aeec0f65",
+      "category": "mcu",
+      "pages": 270
+    },
+    {
+      "part": "STM32L496ZG",
+      "manufacturer": "st",
+      "url": "https://www.st.com/resource/en/datasheet/stm32l496zg.pdf",
+      "sha256": "07777c1c9ca126d7865d9dd8be38d3686d6b9442ed445f098bb6fa5f1d554860",
+      "category": "mcu",
+      "pages": 280
+    },
+    {
+      "part": "STM32U575ZI",
+      "manufacturer": "st",
+      "url": "https://www.st.com/resource/en/datasheet/stm32u575zi.pdf",
+      "sha256": "f3de0b5e62ad45ed46bdaf8dbebec358edae1fd3305c558c5835589085454345",
+      "category": "mcu",
+      "pages": 346
+    },
+    {
+      "part": "STM32F303RE",
+      "manufacturer": "st",
+      "url": "https://www.st.com/resource/en/datasheet/stm32f303re.pdf",
+      "sha256": "5009ea08fac5eb658a49a2a777342f76ddcb94a3277eef398f944872f647062c",
+      "category": "mcu",
+      "pages": 173
+    },
+    {
+      "part": "STM32F334R8",
+      "manufacturer": "st",
+      "url": "https://www.st.com/resource/en/datasheet/stm32f334r8.pdf",
+      "sha256": "4727fd8b6c87c9e0780998ac347f98900e6f1573e534780b405584b38acafbf9",
+      "category": "mcu",
+      "pages": 125
+    },
+    {
+      "part": "STM32WB55RG",
+      "manufacturer": "st",
+      "url": "https://www.st.com/resource/en/datasheet/stm32wb55rg.pdf",
+      "sha256": "94daab4aca690492b84e0898cfd1ee05ed829ee15faca86332ff63e5c6c4da72",
+      "category": "mcu",
+      "pages": 194
+    },
+    {
+      "part": "STM32WL55JC",
+      "manufacturer": "st",
+      "url": "https://www.st.com/resource/en/datasheet/stm32wl55jc.pdf",
+      "sha256": "22b710f5d7d8929fa423bf3e1ef2afabbbd7712b31acf1bed108ed98f05d902a",
+      "category": "mcu",
+      "pages": 150
+    },
+    {
+      "part": "STM32G031K8",
+      "manufacturer": "st",
+      "url": "https://www.st.com/resource/en/datasheet/stm32g031k8.pdf",
+      "sha256": "0e25cbbf2cd173845545b61b91a9a7011724b4e5bd7b00498176129d48684e99",
+      "category": "mcu",
+      "pages": 126
+    },
+    {
+      "part": "MSP430FR5994",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/msp430fr5994.pdf",
+      "sha256": "e329ba52b18aa369293a3b4e4cf9b375be707b147b143060f6de78e4cf417a80",
+      "category": "mcu",
+      "pages": 180
+    },
+    {
+      "part": "TMS320F28379D",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/tms320f28379d.pdf",
+      "sha256": "4b52248d7c7a8e92c16bffdaba5dc984aefc5269214c52f11813f4121487aeaa",
+      "category": "mcu",
+      "pages": 257
+    },
+    {
+      "part": "ADR4550",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/ADR4550.pdf",
+      "sha256": null,
+      "category": "other",
+      "pages": null
+    },
+    {
+      "part": "ADR4525",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/ADR4525.pdf",
+      "sha256": null,
+      "category": "other",
+      "pages": null
+    },
+    {
+      "part": "ADR4530",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/ADR4530.pdf",
+      "sha256": null,
+      "category": "other",
+      "pages": null
+    },
+    {
+      "part": "LT1021-5",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/1021fc.pdf",
+      "sha256": null,
+      "category": "other",
+      "pages": null
+    },
+    {
+      "part": "TPS7A4700",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/tps7a4700.pdf",
+      "sha256": null,
+      "category": "ldo",
+      "pages": null
+    },
+    {
+      "part": "LT3045",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/lt3045.pdf",
+      "sha256": null,
+      "category": "ldo",
+      "pages": null
+    },
+    {
+      "part": "LT3094",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/lt3094.pdf",
+      "sha256": null,
+      "category": "ldo",
+      "pages": null
+    },
+    {
+      "part": "TPS7A3301",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/tps7a33.pdf",
+      "sha256": "1b607b7bf1350a0fcce4feb184a30e36d1a14c853157e4ae1e7966315a94d81c",
+      "category": "ldo",
+      "pages": 35
+    },
+    {
+      "part": "INA282",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/ina282.pdf",
+      "sha256": "1dc6f1ab8f955cd868d32ba5ea13c4bd56e94320e81f0aa778d7d060446fe435",
+      "category": "other",
+      "pages": 38
+    },
+    {
+      "part": "INA283",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/ina283.pdf",
+      "sha256": "1dc6f1ab8f955cd868d32ba5ea13c4bd56e94320e81f0aa778d7d060446fe435",
+      "category": "other",
+      "pages": 38
+    },
+    {
+      "part": "TPS3839",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/tps3839.pdf",
+      "sha256": "15422cab11f38f7cf0d3c81d21b6b75f8d8dafe35e776800610ecea3615d4ba9",
+      "category": "other",
+      "pages": 35
+    },
+    {
+      "part": "MAX6316",
+      "manufacturer": "analog",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX6316-MAX6322.pdf",
+      "sha256": null,
+      "category": "other",
+      "pages": null
+    },
+    {
+      "part": "SN65LVDS179",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/sn65lvds179.pdf",
+      "sha256": "8f35c4d6794df1fe5d41cb3c24756b8f8e39e97d5fa8f20e0aa5b9cc55280daa",
+      "category": "interface",
+      "pages": 56
+    },
+    {
+      "part": "SN65HVD1785",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/sn65hvd1785.pdf",
+      "sha256": "16a1b9fd215fdcf1ea13402075f073714dda5d9368a767cc506b9c3453fda9d2",
+      "category": "interface",
+      "pages": 38
+    },
+    {
+      "part": "SN65HVD1786",
+      "manufacturer": "ti",
+      "url": "https://www.ti.com/lit/ds/symlink/sn65hvd1786.pdf",
+      "sha256": "16a1b9fd215fdcf1ea13402075f073714dda5d9368a767cc506b9c3453fda9d2",
+      "category": "interface",
+      "pages": 38
     }
   ]
 }
