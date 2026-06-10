@@ -7,7 +7,9 @@ context that made the numbers answerable. The rules here:
 
 - **Tables are atomic.** One table block → one chunk, never merged with prose.
   Oversized tables split by *rows*, with the markdown header row repeated in
-  every piece so each piece remains a self-describing table.
+  every piece so each piece remains a self-describing table. A single row
+  wider than the cap is kept intact — row integrity beats the size limit, so
+  ``max_chars`` is a soft bound in that (rare) pathological case.
 - **Prose follows sections.** Text accumulates within one ``section_path`` and
   flushes at section boundaries or the size target, splitting on sentence
   boundaries under the hard cap.
@@ -179,7 +181,8 @@ def chunk_doc(
     flush()
 
     # Final pass: merge tiny text drafts into the preceding text draft of the
-    # same section when the result stays under the cap.
+    # same section when the result (including its context header) stays under
+    # the cap.
     merged: list[_Draft] = []
     for d in drafts:
         prev = merged[-1] if merged else None
@@ -189,10 +192,11 @@ def chunk_doc(
             and prev.kind == "text"
             and prev.section_path == d.section_path
             and len(d.body) < min_chars
-            and len(prev.body) + len(d.body) + 1 <= max_chars
         ):
-            prev.body = prev.body + " " + d.body
-            continue
+            header_len = len(context_header(doc.part, prev.section_path)) + 1
+            if header_len + len(prev.body) + 1 + len(d.body) <= max_chars:
+                prev.body = prev.body + " " + d.body
+                continue
         merged.append(d)
 
     chunks: list[Chunk] = []

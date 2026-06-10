@@ -75,6 +75,26 @@ def test_oversized_table_splits_by_rows_and_repeats_header():
         assert all(ln.count("|") == 4 for ln in lines)  # no row cut mid-way
 
 
+def test_single_oversized_row_is_kept_intact():
+    giant_row = "| P | " + "x" * 500 + " |"
+    table = "| Param | Val |\n|---|---|\n" + giant_row
+    pieces = split_table_by_rows(table, 200)
+    # row integrity beats the size cap: the row must appear unbroken
+    assert any(giant_row in p for p in pieces)
+
+
+def test_merged_text_chunks_respect_cap_including_header():
+    big = "Sentence of prose here. " * 95  # ~2280 chars
+    d = doc(
+        [
+            text_block(big.strip(), ["8 Layout", "8.1 Guidelines"]),
+            text_block("Short tail fragment.", ["8 Layout", "8.1 Guidelines"]),
+        ]
+    )
+    chunks = chunk_doc(d, target_chars=2400, max_chars=2600, min_chars=200)
+    assert all(c.n_chars <= 2600 for c in chunks if c.kind == "text")
+
+
 def test_table_rows_are_never_lost_in_split():
     rows = [f"| P{i} | {i} | {i + 1} |" for i in range(25)]
     table = "| Param | Min | Max |\n|---|---|---|\n" + "\n".join(rows)

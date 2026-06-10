@@ -12,8 +12,8 @@ Engineering roadmap for datasheet-rag. Six phases; each phase lands as a reviewe
 - [x] Docling ingestion: PDF → structured doc (sections, tables, provenance)
 - [x] Document dedupe by sha256 before indexing — vendors ship one PDF for part variants (observed: OPA591/OPA2591 share a single TI datasheet); index once, map both parts to it
 - [x] Table-aware chunker: tables → markdown chunks carrying caption + section path; prose → section-bounded chunks (sweep sizes later, Phase 4)
-- [ ] Corpus stats notebook: pages, tables/doc, chunk-length distributions
-- [ ] Open-corpus track: RISC-V ISA manual ingestion path for CI + demo (CC-BY-4.0)
+- [x] Corpus stats report (`scripts/corpus_stats.py` → `docs/corpus-stats.md`): pages, tables/doc, chunk-length distributions
+- [x] Open-corpus track: RISC-V ISA manual (CC-BY-4.0, release-pinned in `data/open-manifest.json`) — 901 pp, 519 tables, 2,867 chunks
 - **Exit criteria:** `download → parse → chunk` runs end-to-end on 10 datasheets + RISC-V manual; chunker unit-tested; CI green
 
 ## Phase 2 — Baseline RAG

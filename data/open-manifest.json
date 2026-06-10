@@ -1,0 +1,14 @@
+{
+  "$schema_note": "Open-corpus manifest: openly licensed technical documents that CAN be redistributed (unlike vendor datasheets) and therefore back the public demo and CI fixtures. Same schema as manifest.json; release-pinned URLs for reproducibility. RISC-V ISA Manual is CC-BY-4.0 (github.com/riscv/riscv-isa-manual).",
+  "version": 1,
+  "entries": [
+    {
+      "part": "RISCV-SPEC",
+      "manufacturer": "other",
+      "url": "https://github.com/riscv/riscv-isa-manual/releases/download/riscv-isa-release-cfeee0a-2026-06-09/riscv-spec.pdf",
+      "sha256": "95174d7f97337c9580a612e016b9ed25e06e6528eaf8c64b10ab1ab16024367f",
+      "category": "other",
+      "pages": 902
+    }
+  ]
+}

@@ -48,8 +48,15 @@ def main(
         by_sha.setdefault(e.sha256, []).append(e)
 
     out.mkdir(parents=True, exist_ok=True)
-    aliases = {sha: [e.part for e in entries] for sha, entries in by_sha.items()}
-    (out / "aliases.json").write_text(json.dumps(aliases, indent=2) + "\n", encoding="utf-8")
+    # Merge into any existing aliases file: ingestion may run once per manifest
+    # (vendor datasheets and the open corpus), and each run must not clobber
+    # the other's sha256 → parts mapping.
+    aliases_path = out / "aliases.json"
+    aliases: dict[str, list[str]] = {}
+    if aliases_path.exists():
+        aliases = json.loads(aliases_path.read_text(encoding="utf-8"))
+    aliases.update({sha: [e.part for e in entries] for sha, entries in by_sha.items()})
+    aliases_path.write_text(json.dumps(aliases, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 
     selected = []
     for sha, entries in by_sha.items():
