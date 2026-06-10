@@ -33,6 +33,7 @@ def main(
     max_seq: int = typer.Option(1024, "--max-seq"),
     device: str = typer.Option("cuda:1", "--device"),
     seed: int = typer.Option(0, "--seed"),
+    max_steps: int = typer.Option(-1, "--max-steps", help="Cap steps for a smoke test (-1 = full)"),
 ) -> None:
     import torch
     from datasets import load_dataset
@@ -77,6 +78,7 @@ def main(
     args = SFTConfig(
         output_dir=str(out_dir / "_checkpoints"),
         num_train_epochs=epochs,
+        max_steps=max_steps,
         per_device_train_batch_size=batch,
         gradient_accumulation_steps=grad_accum,
         learning_rate=lr,
