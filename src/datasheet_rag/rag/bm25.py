@@ -16,8 +16,6 @@ from __future__ import annotations
 import re
 from pathlib import Path
 
-from rank_bm25 import BM25Okapi
-
 from datasheet_rag.ingest.models import Chunk, load_chunks
 from datasheet_rag.rag.retrieve import RetrievedChunk
 
@@ -38,6 +36,8 @@ class BM25Retriever:
     """Okapi BM25 over chunk text, returning the Retriever protocol shape."""
 
     def __init__(self, chunks: list[Chunk]) -> None:
+        from rank_bm25 import BM25Okapi  # optional [rag] dep; kept out of import path
+
         self._chunks = chunks
         self._bm25 = BM25Okapi([tokenize(c.text) for c in chunks])
 
