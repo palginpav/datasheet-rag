@@ -1,0 +1,32 @@
+# Corpus: datasheet PDFs are downloadable but NOT redistributable — never committed
+corpus/
+
+# Models, adapters, runs
+models/
+runs/
+*.gguf
+*.safetensors
+
+# Vector store
+chroma/
+*.chroma
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.ruff_cache/
+
+# Notebooks / local
+.ipynb_checkpoints/
+.env
+*.log
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/

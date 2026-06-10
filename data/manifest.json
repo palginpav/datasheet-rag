@@ -1,0 +1,5 @@
+{
+  "$schema_note": "Corpus manifest. Datasheet PDFs are not redistributable and are never committed; this manifest plus the downloader reproduces the corpus locally. Fields: part (manufacturer part number), manufacturer (ti|st|nxp|...), url (canonical manufacturer PDF URL), sha256 (hex digest of the PDF, null until pinned), category (mcu|opamp|ldo|interface|...), pages (int, null until known).",
+  "version": 1,
+  "entries": []
+}
