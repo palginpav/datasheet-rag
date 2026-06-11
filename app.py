@@ -184,8 +184,11 @@ with gr.Blocks(title="datasheet-rag") as demo:
 
 
 if __name__ == "__main__":
-    # Pre-warm the index so the first query is fast (embeds the demo corpus once).
+    # Warm the index in the background so launch() returns immediately and the
+    # Space health check passes (a blocking pre-warm can trip the restart loop).
+    import threading
+
     if DEMO_CHUNKS.exists():
-        _get_retriever()
+        threading.Thread(target=_get_retriever, daemon=True).start()
     # SSR (default in Gradio 6) breaks event wiring on some Spaces — disable it.
     demo.launch(ssr_mode=False)
