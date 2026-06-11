@@ -23,6 +23,7 @@ import gradio as gr
 from datasheet_rag.ingest.models import Chunk, load_chunks
 
 DEMO_CHUNKS = Path("data/demo/riscv-chunks.jsonl")
+DEMO_VECS = Path("data/demo/riscv-doc-vecs.npy")
 K = 6
 _THINK = re.compile(r"<think>.*?</think>\s*", re.DOTALL)
 
@@ -35,7 +36,7 @@ def _strip_thinking(text: str) -> str:
 class InMemoryRetriever:
     """Dense + rerank over an in-memory chunk set (no Chroma; Spaces-friendly)."""
 
-    def __init__(self, chunks: list[Chunk]) -> None:
+    def __init__(self, chunks: list[Chunk], doc_vecs=None) -> None:
         from sentence_transformers import CrossEncoder, SentenceTransformer
 
         self._chunks = chunks
@@ -44,10 +45,15 @@ class InMemoryRetriever:
         )
         self._embed.max_seq_length = 2048
         self._reranker = CrossEncoder("BAAI/bge-reranker-base")
-        self._doc_vecs = self._embed.encode(
-            [f"search_document: {c.text}" for c in chunks],
-            normalize_embeddings=True, show_progress_bar=False,
-        )
+        if doc_vecs is not None:  # precomputed — avoids embedding the corpus on a slow CPU
+            import numpy as np
+
+            self._doc_vecs = doc_vecs.astype(np.float32)
+        else:
+            self._doc_vecs = self._embed.encode(
+                [f"search_document: {c.text}" for c in chunks],
+                normalize_embeddings=True, show_progress_bar=False,
+            )
 
     def add(self, chunks: list[Chunk]) -> None:
         new = self._embed.encode(
@@ -100,15 +106,18 @@ def _generate(question: str, chunks: list[Chunk]) -> str | None:
         )
         return r.json()["message"]["content"]
     if os.environ.get("HF_TOKEN"):
-        from huggingface_hub import InferenceClient
+        try:
+            from huggingface_hub import InferenceClient
 
-        client = InferenceClient(token=os.environ["HF_TOKEN"])
-        out = client.chat_completion(
-            messages=[{"role": "system", "content": system},
-                      {"role": "user", "content": user}],
-            model="Qwen/Qwen2.5-7B-Instruct", max_tokens=300,
-        )
-        return out.choices[0].message.content
+            client = InferenceClient(token=os.environ["HF_TOKEN"])
+            out = client.chat_completion(
+                messages=[{"role": "system", "content": system},
+                          {"role": "user", "content": user}],
+                model="Qwen/Qwen2.5-7B-Instruct", max_tokens=300,
+            )
+            return out.choices[0].message.content
+        except Exception as exc:  # API unavailable -> fall back to retrieval-only
+            return f"_(generation backend unavailable: {type(exc).__name__}; showing evidence)_"
     return None  # retrieval-only
 
 
@@ -123,12 +132,17 @@ def _format_sources(chunks: list[Chunk]) -> str:
 
 
 _retriever: InMemoryRetriever | None = None
+_retriever_lock = __import__("threading").Lock()
 
 
 def _get_retriever() -> InMemoryRetriever:
     global _retriever
-    if _retriever is None:
-        _retriever = InMemoryRetriever(load_chunks(DEMO_CHUNKS))
+    with _retriever_lock:  # only one builder; concurrent callers wait, not double-build
+        if _retriever is None:
+            import numpy as np
+
+            vecs = np.load(DEMO_VECS) if DEMO_VECS.exists() else None
+            _retriever = InMemoryRetriever(load_chunks(DEMO_CHUNKS), doc_vecs=vecs)
     return _retriever
 
 
