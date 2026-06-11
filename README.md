@@ -2,7 +2,12 @@
 
 **Ask your datasheet.** Retrieval-augmented question answering over semiconductor datasheets — with table-aware parsing, hybrid retrieval, grounded citations, and a measured answer to the question: *what does fine-tuning buy you that retrieval doesn't?*
 
-> Status: 🚧 active development — baseline RAG working end-to-end. See [docs/PLAN.md](docs/PLAN.md) for the roadmap and [docs/smoke-run.md](docs/smoke-run.md) for a 20-question transcript.
+> **TL;DR** — a measured RAG system over 90 datasheets. Dense + cross-encoder rerank
+> (hit@8 0.97, refusals 9/9). Two "obvious" upgrades — a BM25 hybrid and a QLoRA
+> fine-tune — were tested and *rejected* because the evidence said so.
+> **Read:** [case study (PDF)](docs/case-study.pdf) · [ablation](docs/ablation.md) ·
+> [fine-tuning study](docs/finetune-study.md) · [model card](docs/model-card.md).
+> **Demo:** `python app.py` (Gradio; RISC-V corpus + upload-your-own-PDF) — deploy notes below.
 
 ```text
 $ python -m datasheet_rag.rag ask "What is the accuracy of the TMP117 temperature sensor?"
@@ -108,7 +113,31 @@ not fine-tuning.
 - [x] 100-question golden set + eval harness (local judge, synthetic generator, agreement tooling)
 - [x] Hybrid retrieval (BM25 + RRF) + reranker + ablation
 - [x] QLoRA fine-tuning study — measured RAG vs FT vs both; RAG wins, FT not shipped
-- [ ] Gradio demo (HF Spaces)
+- [x] Gradio demo + model card, dataset statement, case study (Spaces-ready)
+
+## Demo
+
+```bash
+pip install -e ".[demo,rag,ingest]"
+ollama pull qwen3:4b          # optional generation backend
+python app.py                 # Gradio UI at http://localhost:7860
+```
+
+The demo retrieves over the shipped RISC-V ISA Manual (CC-BY-4.0) and lets you upload your own
+PDF. Generation backend auto-detects `OLLAMA_HOST`, then `HF_TOKEN` (HF Inference API), else runs
+retrieval-only and shows the cited evidence.
+
+**Deploy to Hugging Face Spaces:** create a Gradio Space, push this repo, use
+[`docs/SPACE_README.md`](docs/SPACE_README.md) as the Space's `README.md` (it carries the Space
+metadata header), and set `HF_TOKEN` as a Space secret for generation. `requirements.txt` covers
+the Space runtime.
+
+## Docs
+
+- [Case study (PDF)](docs/case-study.pdf) — the 2-page narrative
+- [Evaluation scorecard](docs/eval-scorecard.md) · [retrieval ablation](docs/ablation.md) · [fine-tuning study](docs/finetune-study.md)
+- [Model card](docs/model-card.md) · [dataset statement](docs/dataset-statement.md)
+- [Build plan](docs/PLAN.md) · [corpus stats](docs/corpus-stats.md)
 
 ## License
 

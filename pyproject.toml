@@ -27,7 +27,8 @@ eval = [
     "deepeval>=1.0",
 ]
 demo = [
-    "gradio>=4.0",
+    "gradio>=6.0",
+    "huggingface-hub>=0.25",
 ]
 dev = [
     "pytest>=8.0",

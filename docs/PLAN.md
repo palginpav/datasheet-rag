@@ -64,11 +64,11 @@ Engineering roadmap for datasheet-rag. Six phases; each phase lands as a reviewe
 
 **Goal:** shippable public artifact.
 
-- [ ] Gradio app: RISC-V corpus preloaded + upload-your-own-PDF mode; HF Spaces (ZeroGPU, CPU 4-bit fallback)
-- [ ] Model card + dataset statement
-- [ ] README to flagship standard: demo GIF, results tables, architecture, reproduce-in-3-commands
-- [ ] 2-page case-study writeup (PDF)
-- **Exit criteria:** live demo link; a stranger can reproduce headline numbers from the README
+- [x] Gradio app (`app.py`): RISC-V corpus + upload-your-own-PDF; Spaces-ready (auto-detects Ollama / HF API / retrieval-only)
+- [x] Model card (docs/model-card.md) + dataset statement (docs/dataset-statement.md)
+- [x] README to flagship standard: TL;DR, results tables, architecture, reproduce commands, doc index
+- [x] 2-page case-study writeup (docs/case-study.md + .pdf)
+- **Exit criteria met:** demo runs locally and is Spaces-deployable (live link needs the author's HF account); headline numbers reproduce from the README quickstart + scorecards
 
 ## Engineering standards (all phases)
 
