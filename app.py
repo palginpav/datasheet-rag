@@ -184,4 +184,8 @@ with gr.Blocks(title="datasheet-rag") as demo:
 
 
 if __name__ == "__main__":
-    demo.launch()
+    # Pre-warm the index so the first query is fast (embeds the demo corpus once).
+    if DEMO_CHUNKS.exists():
+        _get_retriever()
+    # SSR (default in Gradio 6) breaks event wiring on some Spaces — disable it.
+    demo.launch(ssr_mode=False)
