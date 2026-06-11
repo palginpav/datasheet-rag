@@ -192,8 +192,20 @@ with gr.Blocks(title="datasheet-rag") as demo:
          "What does the FENCE instruction do?"],
         inputs=q,
     )
-    btn.click(answer, inputs=q, outputs=[ans, src])
-    q.submit(answer, inputs=q, outputs=[ans, src])
+    def _busy():
+        return (
+            gr.update(value="Processing…", interactive=False),
+            "⏳ Retrieving and generating…",
+            "",
+        )
+
+    def _idle():
+        return gr.update(value="Ask", interactive=True)
+
+    for trigger in (btn.click, q.submit):
+        trigger(_busy, outputs=[btn, ans, src]).then(
+            answer, inputs=q, outputs=[ans, src]
+        ).then(_idle, outputs=btn)
     up.upload(add_pdf, inputs=up, outputs=up_status)
 
 
